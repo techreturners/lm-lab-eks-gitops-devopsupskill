@@ -67,7 +67,7 @@ To get around this Windows users will need to run this command to get the string
 $argocdpass = kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
 ```
 
-The just type the variable name to get the contents and then add that into the below command to get your ArgoCD password:
+Then just type the variable name to get the contents and add that into the command below to get your ArgoCD password:
 
 ```
 [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('**argocdpass output in here**'))

@@ -53,6 +53,14 @@ rm -rf terraform.tfstate*
 
 ---
 
+### My terraform apply seems to be stuck, what should I do?
+
+Sometimes the terraform apply can intermittently hang when trying to setup your kubectl config. You'll see this because it will take over 20 mins to create the cluster and keep repeating the same step that it is waiting for. 
+
+If you do experience this then simply hit Ctrl + C (to cancel the run) and then **re-run** `terraform apply` - it should identify that much of the items have been created and finish off with updating your kubeconfig.
+
+---
+
 ### Where do I run the `terraform destroy` command?
 
 - You need to run the `terraform destroy` command from the location where your terraform config is

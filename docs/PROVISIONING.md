@@ -150,6 +150,10 @@ terraform apply
 
 Sit back and relax - it might take 10 mins or so to create your cluster. Perfect time to have a ☕️  or a chat together.
 
+**NOTE:** Sometimes the terraform apply can intermittently hang when trying to setup your kubectl config. You'll see this because it will take over 20 mins to create the cluster and keep repeating the same step that it is waiting for. If you do experience this then simply hit Ctrl + C (to cancel the run) and then **re-run** `terraform apply` - it should identify that much of the items have been created and finish off with updating your kubeconfig.
+
+(We're working on it...)
+
 Once its finished it'll output something like the info below. Those **outputs** are defined in the **outputs.tf** file.
 
 ```

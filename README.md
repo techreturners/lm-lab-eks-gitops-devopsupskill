@@ -2,9 +2,11 @@
 
 This repository shows examples and guides for using [Terraform](https://terraform.io) to provision a [EKS (Elastic Kubernetes Service) Cluster](https://aws.amazon.com/eks/) on AWS
 
+As well as the instructions below we've also created a suite of [FAQ's](./docs/FAQS.md) that are worth reviewing if you experience any interesting challenges.
+
 ## Instructions
 
-Leading on from session 3 this repository provides instruction for both provisioning your cluster, pushing docker images to your own container registry and adopting a GitOps workflow using ArgoCD
+Leading on from session 3 this repository provides instruction for both provisioning your cluster, pushing docker images to your own container registry and adopting a GitOps workflow using ArgoCD.
 
 ### Step 1 - Review the differences
 
