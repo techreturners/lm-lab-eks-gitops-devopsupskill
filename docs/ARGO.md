@@ -58,6 +58,21 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 (If you see a % sign as the last character that is just signalling the end of line and is NOT part of the password)
 
+**Windows Users**
+Windows users running Powershell will get an error when running the above command to get the ArgoCD password due to Powershell having to decode using base64 in a different way.
+
+To get around this Windows users will need to run this command to get the string into a variable
+
+```
+$argocdpass = kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
+```
+
+The just type the variable name to get the contents and then add that into the below command to get your ArgoCD password:
+
+```
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('**argocdpass output in here**'))
+```
+
 ### Step 4 - Port forwarding into the ArgoCD dashboard
 
 We can use `kubectl` to port forward requests from our machine into the cluster. 
