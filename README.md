@@ -6,7 +6,7 @@ As well as the instructions below we've also created a suite of [FAQ's](./docs/F
 
 ## Instructions
 
-Leading on from session 3 this repository provides instruction for both provisioning your cluster, pushing docker images to your own container registry and adopting a GitOps workflow using ArgoCD.
+Leading on from session 3, this repository extends the provisioning aspects with pushing docker images to your own container registry and adopting a GitOps workflow using [ArgoCD](https://argo-cd.readthedocs.io/en/stable/).
 
 ### Step 1 - Review the differences
 

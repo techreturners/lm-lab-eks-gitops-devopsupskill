@@ -53,22 +53,30 @@ choco install kubernetes-cli
 You can verify that it has installed correctly by running 
 
 ```
-kubectl version
+kubectl version --client --output=yaml
 ```
 
 It should print something like the below:
 
 ```
-Client Version: version.Info{Major:"1", Minor:"20", GitVersion:"v1.20.4", GitCommit:"e87da0bd6e03ec3fea7933c4b5263d151aafd07c", GitTreeState:"clean", BuildDate:"2021-02-21T20:21:49Z", GoVersion:"go1.15.8", Compiler:"gc", Platform:"darwin/amd64"}
+clientVersion:
+  buildDate: "2023-01-18T15:51:24Z"
+  compiler: gc
+  gitCommit: 8f94681cd294aa8cfd3407b8191f6c70214973a4
+  gitTreeState: clean
+  gitVersion: v1.26.1
+  goVersion: go1.19.5
+  major: "1"
+  minor: "26"
+  platform: darwin/arm64
+kustomizeVersion: v4.5.7
 ```
-
-Dont worry if it says "Unable to connect to server" at this stage. We'll be sorting that later.
 
 ### Step 4 - Explore the files
 
 Before we go ahead and create your cluster its worth exploring the files.
 
-Oh and before we do explore, the files in this directory could have been named whatever we like. For example the **outputs.tf** file can have been called **foo.tf** - we just chose to call it that because it contained outputs. So the naming was more of a standard than a requirement.
+Oh and before you explore, the files in this directory could have been named whatever we like. For example the **outputs.tf** file can have been called **foo.tf** - we just chose to call it that because it contained outputs. So the naming was more of a standard than a requirement.
 
 **vpc.tf**
 
