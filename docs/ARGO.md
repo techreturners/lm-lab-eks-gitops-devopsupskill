@@ -46,17 +46,13 @@ You'll need the ArgoCD password for navigating into the dashboard. (We'll do thi
 
 By default, ArgoCD generates a password for you. To extract this run the following command:
 
-```
-kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
-```
-
 If that password doesn't work try running this command to obtain the password (they changed it between version 1.8 and 1.9):
 
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-(If you see a % sign as the last character that is just signalling the end of line and is NOT part of the password)
+(If you see a % sign as the last character that is just signalling the end of line and is **NOT** part of the password)
 
 **Windows Users**
 Windows users running Powershell will get an error when running the above command to get the ArgoCD password due to Powershell having to decode using base64 in a different way.
