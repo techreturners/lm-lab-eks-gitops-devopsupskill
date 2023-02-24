@@ -40,6 +40,14 @@ aws ecr get-login-password --region eu-west-2 --profile terraform-iac | docker l
 
 The above command assumes that you set up AWS credentials using a profile name of **terraform-iac**
 
+**NOTE: Windows Users**
+
+If you receive a "400 bad request error" it may be that you're using a Powershell command the login into your Docker registry. If that is the case then give this version of the login command a try. Remember to replace the AWS_ACCOUNT_ID with your actual account ID.
+
+```
+powershell 'docker login --username AWS -p $(aws ecr get-login-password --region eu-west-2 --profile terraform-iac ) AWS_ACCOUNT_ID.dkr.ecr.eu-west-2.amazonaws.com'
+```
+
 ### Step 4 - Tag your docker image with the location of your registry
 
 The way you tell Docker about your container registries is through the tagging system.
